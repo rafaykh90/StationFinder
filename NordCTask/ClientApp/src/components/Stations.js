@@ -56,11 +56,6 @@ export class Stations extends Component {
 			});
 	}
 
-	onSuccess = (response) => {
-		window.Username = this.state.name;
-		this.props.history.push('/chatScreen');
-	};
-
 	static renderDeviceStationTable(devStationData) {
 		return (
 			<table className='table table-striped'>
