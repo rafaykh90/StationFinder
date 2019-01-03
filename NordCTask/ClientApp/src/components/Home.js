@@ -13,7 +13,7 @@ export class Home extends Component {
           <li><a href='https://facebook.github.io/react/'>React</a> for client-side code</li>
           <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>
         </ul>
-        <p>Click on the 'Stations' on the top right to navigate to the Station Finder page</p>
+        <p>Click on the 'Stations' button on the top right to navigate to the Station Finder page</p>
       </div>
     );
   }
