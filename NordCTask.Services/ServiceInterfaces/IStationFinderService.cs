@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace NordCTask.ServiceInterfaces
 {
+	/// <summary>
+	/// Use this Interface to implement IoC. 
+	/// This is used for DI in this project
+	/// </summary>
 	public interface IStationFinderService
 	{
-		List<DeviceStationData> FindSuitableStation(Point p);
+		List<DeviceStationData> CalculateValuesForDeviceToStation(Point p);
 	}
 }

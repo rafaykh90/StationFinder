@@ -28,6 +28,12 @@ namespace NordCTask.Test.Integration
 			_stationFinderService = provider.GetService<IStationFinderService>();
 		}
 
+		/// <summary>
+		/// Perform tests from Inline data to test the StationFinderService. 
+		/// </summary>
+		/// <param name="x">X value of the device location</param>
+		/// <param name="y">Y value of the device location</param>
+		/// <param name="expectedPower">Power value to be tested against</param>
 		[Theory]
 		[InlineData(0, 0, 100)]
 		[InlineData(100, 100, 0)]
@@ -36,7 +42,7 @@ namespace NordCTask.Test.Integration
 		public void TestFindSuitableStation(double x, double y, double expectedPower)
 		{
 			_logger.LogInformation("Starting test");
-			var res = _stationFinderService.FindSuitableStation(new Point(x, y));
+			var res = _stationFinderService.CalculateValuesForDeviceToStation(new Point(x, y));
 			var suitableStation = res.OrderByDescending(ds => ds.Power).FirstOrDefault();
 			Assert.Equal(expectedPower, suitableStation.Power);
 			_logger.LogInformation("Successfull");

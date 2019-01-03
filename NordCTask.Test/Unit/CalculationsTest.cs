@@ -16,6 +16,9 @@ namespace NordCTask.Test.Unit
 			this.output = output;
 		}
 
+		/// <summary>
+		/// Load test case scenarios from the Json file and perfoms unit test for calculating Distance.
+		/// </summary>
 		[Fact]
 		public void TestCalculateDistance()
 		{
@@ -32,6 +35,9 @@ namespace NordCTask.Test.Unit
 			}
 		}
 
+		/// <summary>
+		/// Test Power calculation
+		/// </summary>
 		[Fact]
 		public void TestCalculatePower()
 		{
@@ -54,15 +60,11 @@ namespace NordCTask.Test.Unit
 			//Assert
 			Assert.Equal(0, power);
 		}
-
-		[Fact]
-		public void TestDeviceStationData()
-		{
-			var dsd = new DeviceStationData(new LinkStation(new Point(10, 15), 20), new Point(3, 4));
-			output.WriteLine(JsonConvert.SerializeObject(dsd, Formatting.Indented));
-		}
 	}
 
+	/// <summary>
+	/// Simple model class used for deserializating data from JSON in tests.
+	/// </summary>
 	public class TestDistanceDataObject
 	{
 		public double expectedValue { get; set; }

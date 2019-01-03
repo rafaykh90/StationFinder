@@ -25,7 +25,7 @@ namespace NordCTask.Controllers
 			{
 				return BadRequest();
 			}
-			return Ok(_stationFinderService.FindSuitableStation(new Point(query.X, query.Y)));
+			return Ok(_stationFinderService.CalculateValuesForDeviceToStation(new Point(query.X, query.Y)));
 		}
 	}
 

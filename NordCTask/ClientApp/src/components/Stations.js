@@ -54,13 +54,6 @@ export class Stations extends Component {
 				this.setState({ deviceStationData: data, loading: false });
 				this.getEndMessage();
 			});
-		//axios.get('/api/users/exists?name=' + this.state.name)
-		//	.then(this.onSuccess)
-		//	.catch(function (error) {
-		//		console.log(error);
-		//		//Update UI with appropriate labels...
-		//		alert("Username already exists");
-		//	});
 	}
 
 	onSuccess = (response) => {
